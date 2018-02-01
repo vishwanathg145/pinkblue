@@ -1,0 +1,226 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Pinkblue",
+		"_postman_id": "af3b1a31-f652-4513-ca8f-72e4751c2190",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"url": "localhost/pinkblue/api.php/users",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"username\":\"vish1\",\"email\":\"vish1@gmail.com\",\"password\":\"password\"}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"url": "localhost/pinkblue/api.php/users/login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "vish",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Products",
+			"request": {
+				"url": "localhost/pinkblue/api.php/products",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"name\":\"Dell Insprion 3152\",\"vendor\":\"Dell\",\"price\":300,\"batch_no\":123456,\"batch_date\":\"2016-12-12\",\"quantity\":100}",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "userId",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve pending Products",
+			"request": {
+				"url": {
+					"raw": "localhost/pinkblue/api.php/products/pending?userId=1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pinkblue",
+						"api.php",
+						"products",
+						"pending"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Pending Products",
+			"request": {
+				"url": "localhost/pinkblue/api.php/products/approve",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "productId",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product",
+			"request": {
+				"url": "localhost/pinkblue/api.php/products/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userId",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"url": "localhost/pinkblue/api.php/products/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "data",
+							"value": "{\"name\":\"Dell Inspriona 3100\",\"vendor\":\"Dell\",\"price\":300,\"batch_no\":123456,\"batch_date\":\"2016-12-12\",\"quantity\":100}",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "userId",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Product Detail Page",
+			"request": {
+				"url": "localhost/pinkblue/api.php/products/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Retieved Approved Products",
+			"request": {
+				"url": "localhost/pinkblue/api.php/products/approved",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
