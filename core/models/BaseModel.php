@@ -7,6 +7,10 @@
  */
 namespace core\models;
 class BaseModel{
+    /**
+     * BaseModel constructor.
+     * @param $data
+     */
     public function __construct($data)
     {
         foreach($data as $key=>$value){
@@ -16,11 +20,4 @@ class BaseModel{
         }
     }
 
-    public function validate(){
-
-    }
-
-    public function save(){
-
-    }
 }

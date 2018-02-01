@@ -7,9 +7,17 @@
  */
 namespace core\utils;
 class Exceptions extends \Exception{
-    public function __construct($errorMsg, $code=0)
+    protected $code;
+
+    /**
+     * Exceptions constructor.
+     * @param $errorMsg
+     * @param int $code
+     */
+    public function __construct($errorMsg, $code=500)
     {
         parent::__construct($errorMsg, $code);
     }
+
 
 }
