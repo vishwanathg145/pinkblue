@@ -1,0 +1,19 @@
+{
+  "require": {
+    "slim/slim": "3.7.0",
+    "symfony/var-dumper": "^3.3",
+    "symfony/finder": "^3.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "core\\": "core/"
+    }
+  },
+  "require-dev": {
+    "mockery/mockery": "~0.8",
+    "league/phpunit-coverage-listener": "~1.0"
+  },
+  "config": {
+    "bin-dir": "bin"
+  }
+}
